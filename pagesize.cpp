@@ -1,3 +1,10 @@
+// 1. Since they are lefting the hooking single functions; they started to check page counts and if they are shared or no.
+
+// https://en.wikipedia.org/wiki/Page_(computer_memory)
+// https://docs.microsoft.com/en-us/win...ite-protection
+
+// Bypassing:
+
 typedef BOOL(_fastcall* QueryWorkingSetEx_t)(HANDLE hProcess, PVOID  pv, DWORD  cb);
 QueryWorkingSetEx_t QueryWorkingSetEx_ptr;
  
