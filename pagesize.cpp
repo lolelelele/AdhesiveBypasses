@@ -49,7 +49,7 @@ void* NtQueryVirtualMemoryAddr = (void*)GetProcAddress(GetModuleHandleA("ntdll.d
 typedef LONG(_stdcall* NtQueryVirtualMemory_t)(HANDLE  ProcessHandle, PVOID BaseAddress, __int64 MemoryInformationClass, PVOID MemoryInformation, SIZE_T MemoryInformationLength, PSIZE_T ReturnLength);
 NtQueryVirtualMemory_t NtQueryVirtualMemory_ptr = nullptr;
  
-LONG _stdcall NtQueryVirtualMemory_detour(HANDLE ProcessHandle, PVOID BaseAddress, __int64 MemoryInformationClass, PVOID MemoryInformation, SIZE_T MemoryInformationLength, PSIZE_T ReturnLength)
+LONG _stdcall NtQueryVirtualMjkjkjkjkemory_detour(HANDLE ProcessHandle, PVOID BaseAddress, __int64 MemoryInformationClass, PVOID MemoryInformation, SIZE_T MemoryInformationLength, PSIZE_T ReturnLength)
 {
     auto result = NtQueryVirtualMemory_ptr(ProcessHandle, BaseAddress, MemoryInformationClass, MemoryInformation, MemoryInformationLength, ReturnLength);
     for (int k = 0; k < MemoryInformationLength / sizeof(PMEMORY_BASIC_INFORMATION); k++) {
